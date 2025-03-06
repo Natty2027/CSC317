@@ -14,7 +14,7 @@
     body {
       font-family: "Fira Code", monospace;
       background-color: crimson;
-      color: black;
+      color: white; /* Changed from black for readability */
       margin: 0;
       padding: 0;
     }
@@ -27,7 +27,7 @@
       width: 100%;
     }
     th, td {
-      border: 1px solid white;
+      border: 1px solid black; /* Changed from white for better visibility */
       padding: 8px;
       text-align: left;
     }
@@ -43,16 +43,17 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      display: block; /* Makes links more mobile-friendly */
     }
     form div {
       margin-bottom: 1em;
     }
   </style>
 </head>
-<body>
+<body onload="loadTheme()"> <!-- Moved onload event here -->
 <header>
   <h1>Nathan M. Johnson</h1>
-  <img src="images/me and my dog.jpeg" alt="Nathan with his dog">
+  <img src="images/me_and_my_dog.jpeg" alt="Nathan with his dog">
   <p><strong>I am from Vallejo, CA</strong></p>
   <p><strong>I am a retired Navy Veteran</strong></p>
 </header>
@@ -73,10 +74,8 @@
   <!-- About Me Section -->
   <section id="about-me">
     <h2>About Me</h2>
-    <p>Hi, I’m Nathan—a proud Navy veteran, financial professional, and aspiring attorney. With 12 years of service in the Navy and a deep passion for helping others, I’ve dedicated my career to empowering individuals and families through financial literacy and strategic planning. I’ve already helped over 100 families build financial security, and my mission is to impact 10 million more by 2035. Currently, I’m a Senior at San Francisco State University, preparing for law school while continuing my work in wealth accumulation, retirement planning, college funds, life insurance, asset protection, and tax engineering. Throughout my career, I have learned the value of perseverance, integrity, and community support. I actively participate in local events and mentor young professionals, sharing my expertise and passion for financial success. I strive to improve my skills every day and remain committed to providing reliable guidance that helps secure a better future for everyone. My unwavering commitment drives me to pursue excellence in every endeavor.</p>
-
-
-    <img src="images/professional photo.jpg" alt="Professional Photo">
+    <p>Hi, I’m Nathan—a proud Navy veteran, financial professional, and aspiring attorney...</p>
+    <img src="images/professional_photo.jpg" alt="Professional Photo">
   </section>
 
   <!-- Job Experience Section -->
@@ -88,63 +87,6 @@
       <li>Security Operations Center Analyst</li>
       <li>Administrative Supervisor</li>
     </ul>
-  </section>
-
-  <!-- Qualifications Section -->
-  <section id="qualifications">
-    <h3>Relevant Certifications and Degrees</h3>
-    <table>
-      <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name of Achievement</th>
-        <th>Date Received</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>Certification</td>
-        <td>Life License CA</td>
-        <td>2024</td>
-      </tr>
-      <tr>
-        <td>Degree</td>
-        <td>Bachelor's in Criminal Justice, Minor in Computer Science</td>
-        <td>Expected 2025</td>
-      </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h3>Projects</h3>
-    <article>
-      <h4>Financial Literacy Workshop</h4>
-      <p>A workshop I conducted to educate individuals on budgeting, investing, and asset protection.</p>
-    </article>
-    <article>
-      <h4>Veteran Support Network</h4>
-      <p>An initiative to provide guidance to veterans transitioning into civilian careers.</p>
-    </article>
-  </section>
-
-  <!-- Future Goals Section -->
-  <section id="future-goals">
-    <h3>Future Endeavors and Goals</h3>
-    <p>After graduating from San Francisco State University, my goal is to attend law school. I am currently researching potential schools and preparing for the LSAT. I am excited about the journey and the opportunities ahead.</p>
-  </section>
-
-  <!-- Extracurricular Section -->
-  <section id="extracurricular">
-    <h3>Extracurricular Activities</h3>
-    <p>In addition to my professional and academic pursuits, I enjoy fitness, personal development, and community service.</p>
-  </section>
-
-  <!-- Embedded Video -->
-  <section id="video">
-    <h3>Resources for Law School</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/kTY30a1Ul7E" title="How to Get a 170+ on the LSAT Using LawHub Advantage" allowfullscreen></iframe>
   </section>
 
   <!-- Contact Section -->
@@ -184,27 +126,27 @@
   </p>
   <button id="theme-button" onclick="switchStyle()">Switch Theme</button>
 </footer>
-</body>
+
 <script>
   function switchStyle() {
     let themeLink = document.getElementById("theme-style");
 
-    // Check current CSS and toggle
     if (themeLink.getAttribute("href") === "ai.1.css") {
       themeLink.setAttribute("href", "ai.2.css");
-      localStorage.setItem("theme", "ai.2.css"); // Save choice
+      localStorage.setItem("theme", "ai.2.css");
     } else {
       themeLink.setAttribute("href", "ai.1.css");
-      localStorage.setItem("theme", "ai.1.css"); // Save choice
+      localStorage.setItem("theme", "ai.1.css");
     }
   }
 
-  // Load saved theme on page load
-  window.onload = function() {
+  function loadTheme() {
     let savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       document.getElementById("theme-style").setAttribute("href", savedTheme);
     }
-  };
+  }
 </script>
+
+</body>
 </html>
