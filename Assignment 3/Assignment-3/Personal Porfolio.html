@@ -14,7 +14,7 @@
     body {
       font-family: "Fira Code", monospace;
       background-color: crimson;
-      color: black;
+      color: blueviolet;
       margin: 0;
       padding: 0;
     }
@@ -110,7 +110,7 @@
       <tr>
         <td>Degree</td>
         <td>Bachelor's in Criminal Justice, Minor in Computer Science</td>
-        <td>Expected 2025</td>
+        <td>Expected 2026</td>
       </tr>
       </tbody>
     </table>
@@ -188,14 +188,18 @@
 <script>
   function switchStyle() {
     let themeLink = document.getElementById("theme-style");
+    let currentTheme = themeLink.getAttribute("href");
 
-    // Check current CSS and toggle
-    if (themeLink.getAttribute("href") === "ai.1.css") {
+    // Cycle through the themes
+    if (currentTheme === "ai.1.css") {
       themeLink.setAttribute("href", "ai.2.css");
-      localStorage.setItem("theme", "ai.2.css"); // Save choice
+      localStorage.setItem("theme", "ai.2.css");
+    } else if (currentTheme === "ai.2.css") {
+      themeLink.setAttribute("href", "style.css");
+      localStorage.setItem("theme", "style.css");
     } else {
       themeLink.setAttribute("href", "ai.1.css");
-      localStorage.setItem("theme", "ai.1.css"); // Save choice
+      localStorage.setItem("theme", "ai.1.css");
     }
   }
 
@@ -207,4 +211,5 @@
     }
   };
 </script>
+
 </html>
