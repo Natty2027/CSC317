@@ -1,32 +1,29 @@
-/*Please create a simple CSS file for my portfolio website inspired by a modern, minimalist tech aesthetic. I'm a student learning CSS basics and need styling for the following sections:
+/*Please create a simple CSS file for my portfolio website inspired by a clean and modern professional aesthetic. I'm a student learning CSS basics and need styling for the following sections:
 •	Navigation bar
 •	Header/intro section
-            •	About me section
-            •	Education section
-            •	Projects section
-            •	Skills section
-            •	Extracurricular activities section
-            •	Contact form
-            •	Footer
-            Make sure the layout is responsive for both mobile and desktop screens. Please include helpful comments explaining what different parts of the CSS do.
-            Some specific things I'd like:
-•	A color scheme based on modern UI principles (using CSS variables like --primary-bg, --text-color, --accent-color)
-•	A clean, easy-to-read font ("Roboto", sans-serif)
-•	Subtle hover effects on navigation links and buttons for a polished feel
-•	A project section with a card layout that includes hover animations for interactivity
-•	A floating theme switch button for toggling between light and dark modes
-•	Thoughtful spacing and alignment for a well-balanced visual hierarchy*/
+•	About me section
+•	Education section
+•	Projects section
+•	Skills section
+•	Extracurricular activities section
+•	Contact form
+•	Footer
+I'd like my website to have a structured and visually balanced look that emphasizes readability and accessibility. Make sure the layout is fully responsive for both mobile and desktop screens. Please add helpful comments that explain what different parts of the CSS do.
+Some specific things I'd like:
+•	A color scheme based on a cohesive and elegant palette (using CSS variables like --secondary-bg, --primary-text, and --accent-color)
+•	A well-structured font (using "Merriweather", serif) for a professional and refined feel
+•	Smooth hover effects on navigation links and buttons
+•	A card-based design for projects with slight elevation effects on hover
+•	Consistent spacing and padding for a clean and uncluttered layout*/
 
-    /* CSS Variables for Consistency (Original Color Scheme Maintained) */
+/* CSS Variables for Consistency (Maintained Original Color Scheme) */
 :root {
-    --primary-bg: #161b22;
-    --primary-text: #58a6ff;
-    --secondary-bg: #21262d;
-    --nav-bg: #21262d;
-    --accent-color: #58a6ff;
-    --hover-color: #79c0ff;
-    --text-color: #c9d1d9;
-    --input-bg: #0d1117;
+    --primary-bg: #7908A6;
+    --primary-text: #333;
+    --secondary-bg: #E3FD03;
+    --nav-bg: #333;
+    --accent-color: #1308A6;
+    --hover-color: #a68445;
 }
 
 /* Global Reset */
@@ -38,15 +35,15 @@
 
 /* General Styling */
 body {
-    font-family: "Roboto", sans-serif;
-    background-color: var(--primary-bg);
-    color: var(--text-color);
+    font-family: "Merriweather", serif;
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
     line-height: 1.6;
 }
 
 /* Header Styling */
 header {
-    background-color: var(--primary-bg);
+    background-color: var(--secondary-bg);
     color: var(--primary-text);
     text-align: center;
     padding: 20px 0;
@@ -81,10 +78,11 @@ nav {
     display: flex;
     gap: 20px;
     list-style: none;
+    padding: 0;
 }
 
 .nav-menu li a {
-    color: var(--accent-color);
+    color: var(--primary-bg);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -92,31 +90,27 @@ nav {
 
 .nav-menu li a:hover,
 .nav-menu li a:focus {
-    color: var(--hover-color);
+    color: var(--accent-color);
 }
 
 /* Main Content Styling */
 main {
     max-width: 1200px;
     margin: 20px auto;
-    background: var(--secondary-bg);
+    background:  var(--primary-bg);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(88, 166, 255, 0.2);
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Explicit Styling for Sections */
-.about-section,
-.education-section,
-.experience-section,
-.projects-section,
-.skills-section,
-.extracurricular-section,
-.contact-section {
+/* Section Styling */
+section {
     padding: 20px;
-    background-color: var(--primary-bg);
+    background-color: var(--secondary-bg);
     border-radius: 8px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .projects-section .project-card {
@@ -139,13 +133,14 @@ table {
 }
 
 th, td {
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--nav-bg);
     padding: 10px;
+    text-align: left;
 }
 
 th {
-    background-color: var(--secondary-bg);
-    color: var(--accent-color);
+    background-color: var(--accent-color);
+    color: white;
 }
 
 /* Form Styling */
@@ -156,10 +151,10 @@ form div {
 input, textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid var(--accent-color);
+    border: 1px solid var(--nav-bg);
     border-radius: 5px;
-    background-color: var(--input-bg);
-    color: var(--text-color);
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
 }
 
 input[type="submit"] {
@@ -167,6 +162,7 @@ input[type="submit"] {
     color: white;
     cursor: pointer;
     border: none;
+    padding: 10px;
     transition: background 0.3s ease;
 }
 
@@ -187,6 +183,7 @@ input[type="submit"]:focus {
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s ease;
+    z-index: 10; /* Ensures it doesn’t get hidden */
 }
 
 #theme-button:hover,
@@ -196,8 +193,8 @@ input[type="submit"]:focus {
 
 /* Footer Styling */
 footer {
-    background: var(--primary-bg);
-    color: var(--accent-color);
+    background: var(--nav-bg);
+    color: white;
     text-align: center;
     padding: 15px 0;
     margin-top: 20px;
@@ -227,19 +224,26 @@ footer a img {
     color: #555;
 }
 
-/* Media Queries for Responsive Design */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .nav-menu {
+    .nav-container {
         flex-direction: column;
         align-items: center;
     }
 
-    main, .nav-container {
-        width: 100%;
-        padding: 10px;
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main {
+        width: 95%;
+        padding: 15px;
     }
 
     header h1 {
         font-size: 2em;
     }
 }
+
