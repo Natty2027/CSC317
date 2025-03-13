@@ -1,22 +1,32 @@
-/*Please create a simple CSS file for my portfolio website inspired by a clean and modern professional aesthetic. I'm a student learning CSS basics and need styling for the following sections:
-•	Navigation bar
-•	Header/intro section
-•	About me section
-•	Education section
-•	Projects section
-•	Skills section
-•	Extracurricular activities section
-•	Contact form
-•	Footer
-I'd like my website to have a structured and visually balanced look that emphasizes readability and accessibility. Make sure the layout is fully responsive for both mobile and desktop screens. Please add helpful comments that explain what different parts of the CSS do.
-Some specific things I'd like:
-•	A color scheme based on a cohesive and elegant palette (using CSS variables like --secondary-bg, --primary-text, and --accent-color)
-•	A well-structured font (using "Merriweather", serif) for a professional and refined feel
-•	Smooth hover effects on navigation links and buttons
-•	A card-based design for projects with slight elevation effects on hover
-•	Consistent spacing and padding for a clean and uncluttered layout*/
+/* Please create a simple CSS file for my portfolio website, inspired by a clean and modern professional aesthetic. 
+   I'm a student learning CSS basics and need styling for the following sections:
 
-/* CSS Variables for Consistency (Maintained Original Color Scheme) */
+   - Navigation bar
+   - Header/intro section
+   - About me section
+   - Education section
+   - Projects section
+   - Skills section
+   - Extracurricular activities section
+   - Contact form
+   - Footer
+
+   My website should have a structured and visually balanced look that emphasizes readability and accessibility. 
+   The layout should be fully responsive for both mobile and desktop screens.
+
+   --- Key Design Requests ---
+   - refined and elegant color scheme** using CSS variables (e.g., --primary-bg, --secondary-bg, --accent-color, --hover-color).
+   - cohesive and accessible font choice** ("Merriweather", serif) for a professional feel.
+   - Improved contrast for navigation links**, ensuring readability.
+   - Smooth hover effects** on navigation links and buttons for an interactive experience.
+   - A card-based layout** for the projects section with a subtle hover effect (slight elevation).
+   - Well-defined styling** for the "Education," "Skills," and "Extracurricular Activities" sections, ensuring clear separation and readability.
+   - A modern button design** for the contact form with a slight scaling effect on hover.
+   - A **centered header image layout** with improved spacing.
+   - Responsive typography adjustments** for mobile screens (e.g., slightly smaller font size in the header).
+   - Ensure the website is **clean, structured, and visually appealing** with consistent padding, spacing, and alignment.
+*/
+
 :root {
     --primary-bg: #7908A6;
     --primary-text: #333;
