@@ -121,7 +121,7 @@ section h2 {
     padding-bottom: 5px;
 }
 
-/* Projects Section */
+/* Projects Section, this section is the most interactive i thought about making the whole thing alive but i eventually aimed for something simpler*/
 .projects-section .project-card {
     background: var(--color-secondary);
     padding: 20px;
