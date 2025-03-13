@@ -1,5 +1,5 @@
 
-/* Ensures box-sizing consistency */
+/* This for box-sizing consistency */
 
 * {
     margin: 0;
@@ -75,7 +75,7 @@ section {
 }
 
 
-/* Profile Image */
+/* Profile Image, allows me to edit the properties of the secondary photo */
 
 .profile-secondary {
     text-align: center;
@@ -107,7 +107,7 @@ th {
     color: #FAF3A4;
 }
 
-/* Form Input Area */
+/* Form Input Area, this is a pretty simple form, i do not have an action function for this yet*/
 
 input,
 textarea {
@@ -128,7 +128,7 @@ input[type="submit"]:focus {
     background-color: #d9e032;
 }
 
-/* Theme Button Styling */
+/* Theme Button Styling, this makes my button travel with th page staying present */
 #theme-button {
     position: fixed;
     bottom: 20px;
