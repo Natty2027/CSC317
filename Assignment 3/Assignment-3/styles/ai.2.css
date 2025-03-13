@@ -1,35 +1,31 @@
-/*Please create a simple CSS file for my portfolio website inspired by a modern, minimalist tech aesthetic. I'm a student learning CSS basics and need styling for the following sections:
-•	Navigation bar
-•	Header/intro section
-            •	About me section
-            •	Education section
-            •	Projects section
-            •	Skills section
-            •	Extracurricular activities section
-            •	Contact form
-            •	Footer
-            Make sure the layout is responsive for both mobile and desktop screens. Please include helpful comments explaining what different parts of the CSS do.
-            Some specific things I'd like:
-•	A color scheme based on modern UI principles (using CSS variables like --primary-bg, --text-color, --accent-color)
-•	A clean, easy-to-read font ("Roboto", sans-serif)
-•	Subtle hover effects on navigation links and buttons for a polished feel
-•	A project section with a card layout that includes hover animations for interactivity
-•	A floating theme switch button for toggling between light and dark modes
-•	Thoughtful spacing and alignment for a well-balanced visual hierarchy*/
+/* Please create a simple CSS file for my portfolio website, inspired by a modern, minimalist tech aesthetic. 
+   I'm a student learning CSS basics and need styling for the following sections:
 
-    /* CSS Variables for Consistency (Original Color Scheme Maintained) */
-:root {
-    --primary-bg: #161b22;
-    --primary-text: #58a6ff;
-    --secondary-bg: #21262d;
-    --nav-bg: #21262d;
-    --accent-color: #58a6ff;
-    --hover-color: #79c0ff;
-    --text-color: #c9d1d9;
-    --input-bg: #0d1117;
-}
+   - Navigation bar
+   - Header/intro section
+   - About me section
+   - Education section
+   - Projects section
+   - Skills section
+   - Extracurricular activities section
+   - Contact form
+   - Footer
 
-/* Global Reset */
+   My website should have a **structured and visually balanced layout** that prioritizes readability, 
+   accessibility, and responsiveness across **both desktop and mobile screens**.
+
+   --- Key Design Requests ---
+   - A  modern UI color scheme** using CSS variables (`--primary-bg`, `--text-color`, `--accent-color`, etc.).
+   - A  clean and easy-to-read sans-serif font** ("Roboto", sans-serif).
+   -  Subtle hover effects** on navigation links and buttons to enhance user interaction.
+   - A  projects section with a card-based layout**, including hover animations for interactivity.
+   - A  floating theme switch button** to toggle between **light and dark mode**.
+   - Consistent and well-structured sections** with proper spacing and alignment to maintain **a clear visual hierarchy**.
+   - A responsive navigation bar** that adjusts for smaller screens.
+   - Enhanced form styling** with a modern input field design and a hover effect on the submit button.
+   - A professional-looking footer** with aligned elements.
+*/
+
 * {
     margin: 0;
     padding: 0;
