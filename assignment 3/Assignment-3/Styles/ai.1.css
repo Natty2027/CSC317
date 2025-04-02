@@ -1,0 +1,259 @@
+/* Please create a simple CSS file for my portfolio website, inspired by a clean and modern professional aesthetic. 
+   I'm a student learning CSS basics and need styling for the following sections:
+
+   - Navigation bar
+   - Header/intro section
+   - About me section
+   - Education section
+   - Projects section
+   - Skills section
+   - Extracurricular activities section
+   - Contact form
+   - Footer
+
+   My website should have a structured and visually balanced look that emphasizes readability and accessibility. 
+   The layout should be fully responsive for both mobile and desktop screens.
+
+   --- Key Design Requests ---
+   - refined and elegant color scheme** using CSS variables (e.g., --primary-bg, --secondary-bg, --accent-color, --hover-color).
+   - cohesive and accessible font choice** ("Merriweather", serif) for a professional feel.
+   - Improved contrast for navigation links**, ensuring readability.
+   - Smooth hover effects** on navigation links and buttons for an interactive experience.
+   - A card-based layout** for the projects section with a subtle hover effect (slight elevation).
+   - Well-defined styling** for the "Education," "Skills," and "Extracurricular Activities" sections, ensuring clear separation and readability.
+   - A modern button design** for the contact form with a slight scaling effect on hover.
+   - A **centered header image layout** with improved spacing.
+   - Responsive typography adjustments** for mobile screens (e.g., slightly smaller font size in the header).
+   - Ensure the website is **clean, structured, and visually appealing** with consistent padding, spacing, and alignment.
+*/
+
+:root {
+    --primary-bg: #7908A6;
+    --primary-text: #333;
+    --secondary-bg: #E3FD03;
+    --nav-bg: #333;
+    --accent-color: #1308A6;
+    --hover-color: #a68445;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styling */
+body {
+    font-family: "Merriweather", serif;
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header img {
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    max-width: 180px;
+}
+
+/* Navigation Styling */
+nav {
+    background: var(--nav-bg);
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu li a {
+    color: var(--primary-bg);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+    color: var(--accent-color);
+}
+
+/* Main Content Styling */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    background:  var(--primary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+section {
+    padding: 20px;
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.projects-section .project-card {
+    background-color: var(--secondary-bg);
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.projects-section .project-card:hover,
+.projects-section .project-card:focus {
+    transform: translateY(-5px);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid var(--nav-bg);
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Form Styling */
+form div {
+    margin-bottom: 1em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--nav-bg);
+    border-radius: 5px;
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+}
+
+input[type="submit"] {
+    background: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background: var(--hover-color);
+}
+
+/* Theme Button Styling */
+#theme-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    z-index: 10; /* Ensures it doesn’t get hidden */
+}
+
+#theme-button:hover,
+#theme-button:focus {
+    background: var(--hover-color);
+}
+
+/* Footer Styling */
+footer {
+    background: var(--nav-bg);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+footer a img {
+    margin-top: 10px;
+}
+
+/* Secondary Profile Image Styling */
+.profile-secondary {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 250px;
+}
+
+.profile-secondary img {
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.profile-secondary figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main {
+        width: 95%;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+
