@@ -1,3 +1,12 @@
+# macOS
 .DS_Store
+
+# IntelliJ
 .idea/
 *.iml
+
+# Node/Web
+node_modules/
+dist/
+.env
+
