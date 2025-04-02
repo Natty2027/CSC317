@@ -5,7 +5,7 @@
 .idea/
 *.iml
 
-# Node/Web
+# Node/Web (optional)
 node_modules/
 dist/
 .env
