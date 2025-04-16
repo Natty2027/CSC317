@@ -9,11 +9,18 @@
   <link id="theme-style" rel="stylesheet" href="styles/styles.css">
 
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
     .button-link {
       display: inline-block;
       padding: 0.5em 1em;
       margin-top: 0.5em;
-      background-color: #007BFF;
+      background-color: #007bff;
       color: white;
       text-decoration: none;
       border-radius: 0.3em;
@@ -23,12 +30,82 @@
     .button-link:hover {
       background-color: #0056b3;
     }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1em 0;
+    }
+
+    header img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      padding: 0;
+      margin: 1em 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 1em 2em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #f1f1f1;
+      margin-top: 3em;
+    }
+
+    .floating-tools {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+      z-index: 999;
+    }
+
+    .floating-tools a img {
+      display: block;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .theme-toggle {
+      padding: 0.5em 1em;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 0.3em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover {
+      background-color: #555;
+    }
   </style>
 </head>
 <body>
+
 <header>
   <h1>Nathan M. Johnson</h1>
-  <img src="images/me_and_my_dog.jpeg" alt="Nathan with his dog">
+  <img src="images/me_and_my_dog.jpeg" alt="Nathan with his dog" width="300">
   <p><strong>Born and raised in Vallejo, CA.</strong></p>
   <p><strong>Retired Navy Veteran, embracing new adventures.</strong></p>
 </header>
@@ -48,7 +125,10 @@
 <main>
   <section id="about">
     <h2>About Me</h2>
-    <p>I’m Nathan—a proud Navy veteran, financial professional, and aspiring attorney. With 12 years of service in the Navy and a deep passion for helping others, I’ve dedicated my career to empowering individuals and families through financial literacy and strategic planning. I’ve already helped over 100 families build financial security, and my mission is to impact 10 million more by 2035. Currently, I’m a Senior at San Francisco State University, preparing for law school while continuing my work in wealth accumulation, retirement planning, college funds, life insurance, asset protection, and tax engineering. Throughout my career, I have learned the value of perseverance, integrity, and community support. I actively participate in local events and mentor young professionals, sharing my expertise and passion for financial success. I strive to improve my skills every day and remain committed to providing reliable guidance that helps secure a better future for everyone. My unwavering commitment drives me to pursue excellence in every endeavor.</p>
+    <p>
+      I’m Nathan—a proud Navy veteran, financial professional, and aspiring attorney. With 12 years of service in the Navy and a deep passion for helping others, I’ve dedicated my career to empowering individuals and families through financial literacy and strategic planning. I’ve already helped over 100 families build financial security, and my mission is to impact 10 million more by 2035.
+      Currently, I’m a Senior at San Francisco State University, preparing for law school while continuing my work in wealth accumulation, retirement planning, college funds, life insurance, asset protection, and tax engineering.
+    </p>
     <figure>
       <img src="images/professional_photo.jpg" alt="Professional Photo of Nathan M. Johnson" width="300">
       <figcaption>Nathan M. Johnson - Financial Professional</figcaption>
@@ -124,20 +204,30 @@
 
   <section id="video">
     <h2>Lawhub Promotional Video</h2>
-    <iframe width="800" height="315" src="https://www.youtube.com/embed/tsfuHiAQh4E" allowfullscreen title="Lawhub Promotional Video"></iframe>
+    <iframe
+            width="800"
+            height="315"
+            src="https://www.youtube.com/embed/tsfuHiAQh4E"
+            allowfullscreen
+            title="Lawhub Promotional Video">
+    </iframe>
   </section>
 </main>
 
 <footer>
   <p>&copy; 2024 Nathan M. Johnson</p>
+</footer>
+
+<!-- Floating LinkedIn and Theme Switcher -->
+<div class="floating-tools">
   <a href="https://www.linkedin.com/in/nathan-johnson-3873096" target="_blank">
     <img src="images/linkedin-icon.png" alt="LinkedIn Profile" width="40">
   </a>
-  <button type="button" onclick="switchStyle()" class="theme-toggle" aria-label="Switch Theme">
+  <button type="button" id="theme-switcher" class="theme-toggle" aria-label="Switch Theme">
     Switch Theme
   </button>
+</div>
 
-</footer>
 <script>
   const themes = [
     "styles/styles.css",
@@ -148,22 +238,21 @@
 
   function switchStyle() {
     const link = document.getElementById("theme-style");
-    const current = link.getAttribute("href");
-    const currentIndex = themes.indexOf(current);
+    const current = link.getAttribute("href").split("/").pop();
+    const currentIndex = themes.map(t => t.split("/").pop()).indexOf(current);
     const next = (currentIndex + 1) % themes.length;
     link.setAttribute("href", themes[next]);
     localStorage.setItem("theme", themes[next]);
   }
 
-  window.onload = () => {
-    const saved = localStorage.getItem("theme");
-    if (saved && themes.includes(saved)) {
-      document.getElementById("theme-style").setAttribute("href", saved);
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.getElementById("theme-style").setAttribute("href", savedTheme);
     }
-  };
-</script>
 
+    document.getElementById("theme-switcher").addEventListener("click", switchStyle);
+  });
+</script>
 </body>
 </html>
-
-
