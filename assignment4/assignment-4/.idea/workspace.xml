@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8ecbe2c1-2d84-46fe-8b43-14a3a1f0f077" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/SUBMISSION.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Natty2027&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Natty2027/-CSC317.git&quot;,
+    &quot;accountId&quot;: &quot;5bcf8d64-2e2c-4c20-98fb-ccb2cdc9bc75&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2vf79nTFDUPtO1wOs2FwQN9jzjJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.Index.html .executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.Index.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.calculator.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nathanjohnson/Documents/CSC317/assignment 4/assignment-4&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ecbe2c1-2d84-46fe-8b43-14a3a1f0f077" name="Changes" comment="" />
+      <created>1744524126041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744524126041</updated>
+      <workItem from="1744524127302" duration="2161000" />
+      <workItem from="1744571744913" duration="223000" />
+      <workItem from="1744572045058" duration="998000" />
+      <workItem from="1744573053850" duration="615000" />
+      <workItem from="1744605175608" duration="146000" />
+      <workItem from="1744605335540" duration="183000" />
+      <workItem from="1744605526822" duration="1975000" />
+      <workItem from="1744643226359" duration="700000" />
+      <workItem from="1744643932899" duration="38000" />
+      <workItem from="1744643975086" duration="215000" />
+      <workItem from="1744644194243" duration="64000" />
+      <workItem from="1744644287738" duration="1227000" />
+      <workItem from="1744645525231" duration="2766000" />
+      <workItem from="1744649282563" duration="563000" />
+      <workItem from="1744649875341" duration="551000" />
+      <workItem from="1744650429850" duration="2779000" />
+      <workItem from="1744653217968" duration="1492000" />
+      <workItem from="1744654813347" duration="4138000" />
+      <workItem from="1744676920643" duration="177000" />
+      <workItem from="1744677100331" duration="2023000" />
+      <workItem from="1744735170137" duration="1270000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
