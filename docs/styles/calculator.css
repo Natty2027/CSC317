@@ -54,7 +54,7 @@ main {
     grid-column: span 2;
 }
 
-/* Memory Indicator */
+/* Section for memory Indicator */
 .memory-indicator {
     position: absolute;
     top: 10px;
@@ -68,7 +68,7 @@ main {
     visibility: visible;
 }
 
-/* Back Link */
+/* To go back Link */
 .back-link {
     margin-top: 20px;
     text-align: center;
