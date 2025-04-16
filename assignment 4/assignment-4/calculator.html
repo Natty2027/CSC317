@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive iOS Style Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS-Style Calculator</title>
 
-    <!-- Base layout -->
-    <link rel="stylesheet" href="styles/calculator.css" />
-    <!-- Swappable theme -->
-    <link id="theme-link" rel="stylesheet" href="styles/ff-theme.css" />
+    <!-- Base calculator styles -->
+    <link rel="stylesheet" href="styles/calculator.css">
+    <!-- Dynamic theme stylesheet -->
+    <link id="theme-link" rel="stylesheet" href="styles/ff-theme.css">
 </head>
 <body class="ff-theme">
 
@@ -24,7 +24,7 @@
         </div>
 
         <div class="buttons">
-            <!-- Memory row -->
+            <!-- Memory functions -->
             <button class="btn ff-gray" data-action="memory-add">M+</button>
             <button class="btn ff-gray" data-action="memory-subtract">M-</button>
             <button class="btn ff-gray" data-action="memory-recall">MR</button>
@@ -63,34 +63,5 @@
 </main>
 
 <script src="scripts/calculator.js"></script>
-<script>
-    const themeLink = document.getElementById("theme-link");
-    const body = document.body;
-    const calculator = document.getElementById("calculator");
-    const display = document.getElementById("display");
-    const switcherButton = document.getElementById("theme-switcher-button");
-
-    const themes = [
-        { name: "ff-theme", href: "styles/ff-theme.css" },
-        { name: "cod-theme", href: "styles/cod-theme.css" },
-        { name: "default-theme", href: "styles/default-theme.css" }
-    ];
-
-    let currentThemeIndex = 0;
-
-    switcherButton.addEventListener("click", () => {
-        body.classList.remove(themes[currentThemeIndex].name);
-        calculator.classList.remove(themes[currentThemeIndex].name);
-        display.classList.remove(themes[currentThemeIndex].name);
-
-        currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-        const newTheme = themes[currentThemeIndex];
-
-        themeLink.href = newTheme.href;
-        body.classList.add(newTheme.name);
-        calculator.classList.add(newTheme.name);
-        display.classList.add(newTheme.name);
-    });
-</script>
 </body>
 </html>
