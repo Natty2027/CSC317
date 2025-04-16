@@ -1,4 +1,4 @@
-// ===== Calculator Logic =====
+// The calculator Logic 
 const display = document.getElementById("display");
 const memIndicator = document.getElementById("memory-indicator");
 
@@ -8,6 +8,7 @@ let operator = null;
 let resetDisplay = false;
 let memory = 0;
 
+// functions for buttons on calculator
 function updateDisplay(value) {
     display.querySelector("span#current-value").textContent = value;
 }
@@ -78,7 +79,7 @@ function percentage() {
     updateDisplay(current);
 }
 
-// ===== Memory Functions =====
+// Memory Functions 
 function memoryAdd() {
     memory += parseFloat(current);
     updateMemoryIndicator();
@@ -99,7 +100,7 @@ function memoryClear() {
     updateMemoryIndicator();
 }
 
-// ===== Theme Switcher =====
+// Theme Switcher 
 const themeLink = document.getElementById("theme-link");
 const calculator = document.getElementById("calculator");
 const body = document.body;
@@ -158,7 +159,7 @@ function switchTheme() {
 
 switcherButton.addEventListener("click", switchTheme);
 
-// ===== Button Click Events =====
+// Button Click Events for calculator 
 document.querySelectorAll(".btn").forEach(btn => {
     btn.addEventListener("click", () => {
         const value = btn.dataset.value;
@@ -177,7 +178,7 @@ document.querySelectorAll(".btn").forEach(btn => {
     });
 });
 
-// ===== Keyboard Support =====
+// Keyboard Support
 window.addEventListener("keydown", e => {
     if ("0123456789.".includes(e.key)) handleNumber(e.key);
     else if (["+", "-", "*", "/"].includes(e.key)) handleOperator(e.key);
