@@ -1,4 +1,4 @@
-// ===== Calculator Logic =====
+//  Calculator functions and Logic
 const display = document.getElementById("display");
 const memIndicator = document.getElementById("memory-indicator");
 
@@ -9,7 +9,8 @@ let resetDisplay = false;
 let memory = 0;
 
 function updateDisplay(value) {
-    display.querySelector("span#current-value").textContent = value;
+    const currentValEl = display.querySelector("span#current-value");
+    if (currentValEl) currentValEl.textContent = value;
 }
 
 function updateMemoryIndicator() {
@@ -21,6 +22,7 @@ function updateMemoryIndicator() {
 }
 
 function handleNumber(num) {
+    if (current === "Error") return;
     if (resetDisplay || current === "0") {
         current = num === "." ? "0." : num;
         resetDisplay = false;
@@ -32,6 +34,7 @@ function handleNumber(num) {
 }
 
 function handleOperator(op) {
+    if (current === "Error") return;
     if (operator && !resetDisplay) calculate();
     previous = current;
     operator = op;
@@ -39,7 +42,8 @@ function handleOperator(op) {
 }
 
 function calculate() {
-    if (!operator || !previous) return;
+    if (!operator || !previous || current === "Error") return;
+
     const prev = parseFloat(previous);
     const curr = parseFloat(current);
     if (isNaN(prev) || isNaN(curr)) return;
@@ -49,7 +53,16 @@ function calculate() {
         case "+": result = prev + curr; break;
         case "-": result = prev - curr; break;
         case "*": result = prev * curr; break;
-        case "/": result = curr === 0 ? "Error" : prev / curr; break;
+        case "/":
+            if (curr === 0) {
+                updateDisplay("Error");
+                current = "Error";
+                previous = "";
+                operator = null;
+                return;
+            }
+            result = prev / curr;
+            break;
         default: return;
     }
 
@@ -68,25 +81,43 @@ function clearAll() {
     updateDisplay(current);
 }
 
+function deleteLast() {
+    if (current === "Error") return;
+    if (current.length > 1) {
+        current = current.slice(0, -1);
+    } else {
+        current = "0";
+    }
+    updateDisplay(current);
+}
+
 function toggleSign() {
+    if (current === "Error" || isNaN(parseFloat(current))) return;
     current = (parseFloat(current) * -1).toString();
     updateDisplay(current);
 }
 
 function percentage() {
+    if (current === "Error" || isNaN(parseFloat(current))) return;
     current = (parseFloat(current) / 100).toString();
     updateDisplay(current);
 }
 
 // Memory Functions
 function memoryAdd() {
-    memory += parseFloat(current);
-    updateMemoryIndicator();
+    const num = parseFloat(current);
+    if (!isNaN(num)) {
+        memory += num;
+        updateMemoryIndicator();
+    }
 }
 
 function memorySubtract() {
-    memory -= parseFloat(current);
-    updateMemoryIndicator();
+    const num = parseFloat(current);
+    if (!isNaN(num)) {
+        memory -= num;
+        updateMemoryIndicator();
+    }
 }
 
 function memoryRecall() {
@@ -99,7 +130,7 @@ function memoryClear() {
     updateMemoryIndicator();
 }
 
-// ===== Theme Switcher =====
+// Theme Switcher 
 const themeLink = document.getElementById("theme-link");
 const calculator = document.getElementById("calculator");
 const body = document.body;
@@ -144,7 +175,7 @@ function switchTheme() {
             themeClass = `${next.name}-gray`;
         } else if (btn.dataset.action === "operator" || btn.dataset.action === "equals") {
             themeClass = `${next.name}-orange`;
-        } else if (btn.dataset.value !== undefined) {
+        } else if (btn.dataset.value != null) {
             themeClass = `${next.name}-dark`;
         }
 
@@ -158,7 +189,7 @@ function switchTheme() {
 
 switcherButton.addEventListener("click", switchTheme);
 
-// ===== Button Click Events =====
+// Action Button Clicks
 document.querySelectorAll(".btn").forEach(btn => {
     btn.addEventListener("click", () => {
         const value = btn.dataset.value;
@@ -173,14 +204,14 @@ document.querySelectorAll(".btn").forEach(btn => {
         else if (action === "memory-subtract") memorySubtract();
         else if (action === "memory-recall") memoryRecall();
         else if (action === "memory-clear") memoryClear();
-        else if (value !== undefined) handleNumber(value);
+        else if (value != null) handleNumber(value);
     });
 });
 
-// ===== Keyboard Support =====
+// Keyboard Support for key clicks
 window.addEventListener("keydown", e => {
     if ("0123456789.".includes(e.key)) handleNumber(e.key);
     else if (["+", "-", "*", "/"].includes(e.key)) handleOperator(e.key);
-    else if (e.key === "Enter") calculate();
-    else if (e.key === "Backspace") clearAll();
+    else if (e.key === "Enter" || e.key === "=") calculate();
+    else if (e.key === "Backspace") deleteLast();
 });
