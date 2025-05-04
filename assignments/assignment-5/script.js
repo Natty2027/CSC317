@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateUI();
     });
 
-    // Optional: filter listeners
+    //  filter listeners
     if (filterType && filterCategory) {
         filterType.addEventListener('change', updateUI);
         filterCategory.addEventListener('input', updateUI);
