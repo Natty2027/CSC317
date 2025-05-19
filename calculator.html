@@ -58,23 +58,25 @@
     </div>
 
     <div class="back-link">
-      <!-- true “Back” button, falls back to index.html if no history -->
-      <button id="back-button" class="btn ff-gray">← Back to Portfolio</button>
+      <!-- Added id here; href remains for fallback -->
+      <a href="index.html" id="back-button" class="btn ff-gray">← Back to Portfolio</a>
     </div>
   </main>
 
   <script src="script/calculator.js"></script>
   <script>
-    // Back-button functionality
+    // Hook the existing <a> to act like a true Back button
     document.getElementById('back-button').addEventListener('click', function(e) {
       e.preventDefault();
       if (history.length > 1) {
         history.back();
       } else {
-        window.location.href = 'index.html';
+        // If no history, fall back to the original href
+        window.location.href = this.getAttribute('href');
       }
     });
   </script>
 </body>
 </html>
+
 
