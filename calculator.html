@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="ff">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,102 +8,76 @@
   <link rel="stylesheet" href="styles/calculator.css">
   <!-- Dynamic theme stylesheet -->
   <link id="theme-link" rel="stylesheet" href="styles/ff-theme.css">
+  <link rel="stylesheet" href="styles/calculator.css">
 </head>
-<body>
-  <header class="theme-switcher">
-    <button id="theme-switcher-button" aria-pressed="false">Switch Theme</button>
-  </header>
+<body class="ff-theme">
+
+  <div class="theme-switcher">
+    <button id="theme-switcher-button">Switch Theme</button>
+  </div>
 
   <main>
-    <section aria-labelledby="calc-title">
-      <h1 id="calc-title" class="visually-hidden">Calculator</h1>
-      <div class="calculator" id="calculator" role="application" aria-label="Calculator">
-        <div class="display" id="display" role="status" aria-live="polite">
-          <span id="memory-indicator" class="memory-indicator" aria-hidden="true">M</span>
-          <span id="current-value">0</span>
-        </div>
-
-        <form class="buttons" aria-describedby="button-instructions">
-          <p id="button-instructions" class="visually-hidden">
-            Use the buttons to perform calculations. Memory buttons: M+, M-, MR, MC. Operators: ÷, ×, −, +, =.
-          </p>
-
-          <fieldset>
-            <legend>Memory functions</legend>
-            <button type="button" class="btn ff-gray" data-action="memory-add" aria-label="Memory add">M+</button>
-            <button type="button" class="btn ff-gray" data-action="memory-subtract" aria-label="Memory subtract">M–</button>
-            <button type="button" class="btn ff-gray" data-action="memory-recall" aria-label="Memory recall">MR</button>
-            <button type="button" class="btn ff-gray" data-action="memory-clear" aria-label="Memory clear">MC</button>
-          </fieldset>
-
-          <fieldset>
-            <legend>Operations</legend>
-            <button type="button" class="btn ff-gray" data-action="clear" aria-label="All clear">AC</button>
-            <button type="button" class="btn ff-gray" data-action="sign" aria-label="Toggle sign">+ / −</button>
-            <button type="button" class="btn ff-gray" data-action="percent" aria-label="Percent">%</button>
-            <button type="button" class="btn ff-orange" data-action="operator" data-value="/" aria-label="Divide">÷</button>
-          </fieldset>
-
-          <fieldset>
-            <legend>Digits and operators</legend>
-            <button type="button" class="btn ff-dark" data-value="7">7</button>
-            <button type="button" class="btn ff-dark" data-value="8">8</button>
-            <button type="button" class="btn ff-dark" data-value="9">9</button>
-            <button type="button" class="btn ff-orange" data-action="operator" data-value="*" aria-label="Multiply">×</button>
-
-            <button type="button" class="btn ff-dark" data-value="4">4</button>
-            <button type="button" class="btn ff-dark" data-value="5">5</button>
-            <button type="button" class="btn ff-dark" data-value="6">6</button>
-            <button type="button" class="btn ff-orange" data-action="operator" data-value="-" aria-label="Subtract">−</button>
-
-            <button type="button" class="btn ff-dark" data-value="1">1</button>
-            <button type="button" class="btn ff-dark" data-value="2">2</button>
-            <button type="button" class="btn ff-dark" data-value="3">3</button>
-            <button type="button" class="btn ff-orange" data-action="operator" data-value="+" aria-label="Add">+</button>
-
-            <button type="button" class="btn ff-dark ff-wide" data-value="0">0</button>
-            <button type="button" class="btn ff-dark" data-value="." aria-label="Decimal point">.</button>
-            <button type="button" class="btn ff-orange" data-action="equals" aria-label="Equals">=</button>
-          </fieldset>
-        </form>
+    <div class="calculator ff-theme" id="calculator">
+      <div class="display ff-theme" id="display">
+        <span id="memory-indicator" class="memory-indicator">M</span>
+        <span id="current-value">0</span>
       </div>
-    </section>
 
-    <nav class="back-link">
-      <button id="back-button" class="btn ff-gray" aria-label="Go back to portfolio">← Back to Portfolio</button>
-    </nav>
+      <div class="buttons">
+        <!-- Memory functions -->
+        <button class="btn ff-gray" data-action="memory-add">M+</button>
+        <button class="btn ff-gray" data-action="memory-subtract">M-</button>
+        <button class="btn ff-gray" data-action="memory-recall">MR</button>
+        <button class="btn ff-gray" data-action="memory-clear">MC</button>
+
+        <!-- Top row -->
+        <button class="btn ff-gray" data-action="clear">AC</button>
+        <button class="btn ff-gray" data-action="sign">+/-</button>
+        <button class="btn ff-gray" data-action="percent">%</button>
+        <button class="btn ff-orange" data-action="operator" data-value="/">÷</button>
+
+        <button class="btn ff-dark" data-value="7">7</button>
+        <button class="btn ff-dark" data-value="8">8</button>
+        <button class="btn ff-dark" data-value="9">9</button>
+        <button class="btn ff-orange" data-action="operator" data-value="*">×</button>
+
+        <button class="btn ff-dark" data-value="4">4</button>
+        <button class="btn ff-dark" data-value="5">5</button>
+        <button class="btn ff-dark" data-value="6">6</button>
+        <button class="btn ff-orange" data-action="operator" data-value="-">−</button>
+
+        <button class="btn ff-dark" data-value="1">1</button>
+        <button class="btn ff-dark" data-value="2">2</button>
+        <button class="btn ff-dark" data-value="3">3</button>
+        <button class="btn ff-orange" data-action="operator" data-value="+">+</button>
+
+        <button class="btn ff-dark ff-wide" data-value="0">0</button>
+        <button class="btn ff-dark" data-value=".">.</button>
+        <button class="btn ff-orange" data-action="equals">=</button>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <!-- Added id here; href remains for fallback -->
+      <a href="index.html" id="back-button" class="btn ff-gray">← Back to Portfolio</a>
+    </div>
   </main>
 
   <script src="script/calculator.js"></script>
   <script>
-    // Theme persistence & toggle
-    (function() {
-      const themeLink = document.getElementById('theme-link');
-      const switcher = document.getElementById('theme-switcher-button');
-      const root = document.documentElement;
-      const stored = localStorage.getItem('theme') || 'ff';
-      root.setAttribute('data-theme', stored);
-      themeLink.href = `styles/${stored}-theme.css`;
-      switcher.setAttribute('aria-pressed', 'false');
-
-      switcher.addEventListener('click', () => {
-        const next = root.getAttribute('data-theme') === 'ff' ? 'dd' : 'ff';
-        root.setAttribute('data-theme', next);
-        themeLink.href = `styles/${next}-theme.css`;
-        localStorage.setItem('theme', next);
-      });
-    })();
-
-    // Back-button behavior
-    document.getElementById('back-button').addEventListener('click', e => {
+    // Hook the existing <a> to act like a true Back button
+    document.getElementById('back-button').addEventListener('click', function(e) {
+      e.preventDefault();
       if (history.length > 1) {
         history.back();
       } else {
-        window.location.href = 'index.html';
+        // If no history, fall back to the original href
+        window.location.href = this.getAttribute('href');
       }
     });
   </script>
 </body>
 </html>
+
 
 
