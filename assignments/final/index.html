@@ -34,6 +34,15 @@
       margin: 0 auto;
     }
 
+    /* Constrain hero and profile images for consistency */
+    header img, figure img {
+      max-width: 300px; /* limit width */
+      width: 100%;      /* responsive */
+      height: auto;
+      display: block;
+      margin: 1em auto;
+    }
+
     /* Navigation styles: horizontal list with wrap */
     nav ul {
       list-style: none;             /* Remove bullet points */
@@ -74,13 +83,6 @@
       background: #fff;
     }
 
-    /* Make images scale to container */
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 1em auto;
-    }
     /* Responsive video embed */
     iframe {
       width: 100%;
@@ -157,9 +159,9 @@
 <main>
   <section id="about">
     <h2>About Me</h2>
-    <!-- Introductory paragraph about background -->
+    <!-- Full About Me with background details -->
     <p>
-      I’m Nathan—a proud Navy veteran, financial professional, and aspiring attorney...  
+      I’m Nathan—a proud Navy veteran with 12 years of service, a dedicated financial professional, and an aspiring attorney. I’m passionate about helping individuals and families achieve financial security through strategic planning and education. To date, I’ve empowered over 100 families to build strong wealth foundations, and my goal is to impact 10 million more by 2035. Currently, I’m completing my Senior year at San Francisco State University, majoring in Criminal Justice with a minor in Computer Science, while preparing for law school. Beyond academics, I specialize in wealth accumulation, retirement planning, college funds, life insurance, asset protection, and tax engineering.
     </p>
     <figure>
       <!-- Profile image and caption -->
@@ -284,7 +286,8 @@
   // Switch theme by cycling through array and saving choice
   function switchStyle() {
     const link = document.getElementById("theme-style");
-    const current = link.getAttribute("href").split("/").pop();
+    const current = link.getAttribute("href").split("/\
+").pop();
     const idx = themes.map(t => t.split("/").pop()).indexOf(current);
     const next = (idx + 1) % themes.length;
     link.setAttribute("href", themes[next]);
@@ -302,4 +305,5 @@
 </script>
 </body>
 </html>
+
 
