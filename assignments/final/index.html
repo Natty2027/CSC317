@@ -9,7 +9,7 @@
   <link id="theme-style" rel="stylesheet" href="mint.css">
 
   <style>
-    /* Base */
+    /* Base Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -19,8 +19,16 @@
       flex-direction: column;
       min-height: 100vh;
     }
-    main { flex: 1; padding: 1em; max-width: 1200px; margin: 0 auto; }
-    header, footer { text-align: center; padding: 1em; }
+    header, footer {
+      text-align: center;
+      padding: 1em;
+    }
+    main {
+      flex: 1;
+      padding: 1em;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
     /* Navigation */
     nav ul {
@@ -29,9 +37,9 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 1em;
+      padding: 0.5em;
       background: #f9f9f9;
       margin: 0;
-      padding: 0.5em;
     }
     nav a {
       text-decoration: none;
@@ -39,38 +47,47 @@
       font-weight: bold;
       padding: 0.5em;
     }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
     /* Sections */
-    section { margin-bottom: 2em; }
+    section {
+      margin-bottom: 2em;
+    }
 
     /* Projects Grid */
-    #projects {
-      margin: 0 -0.5em;
-    }
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1em;
-      padding: 0.5em;
     }
     .project-card {
-      background: #fff;
       border: 1px solid #ddd;
       padding: 1em;
       border-radius: 0.5em;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: #fff;
     }
 
     /* Images & Media */
-    img { max-width: 100%; height: auto; display: block; margin: 0.5em auto; }
-    iframe { width: 100%; aspect-ratio: 16 / 9; border: none; }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1em auto;
+    }
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+    }
 
     /* Buttons & Links */
-    .button-link, .theme-toggle, .back-button {
+    .button-link, .theme-toggle {
       display: inline-block;
-      margin: 0.5em 0;
       padding: 0.5em 1em;
+      margin-top: 0.5em;
       background-color: #007bff;
       color: #fff;
       text-decoration: none;
@@ -79,164 +96,193 @@
       font-weight: bold;
       cursor: pointer;
     }
-    .button-link:hover, .theme-toggle:hover, .back-button:hover {
+    .button-link:hover, .theme-toggle:hover {
       background-color: #0056b3;
     }
 
     /* Responsive Breakpoints */
     @media (max-width: 768px) {
-      main { padding: 0.5em; }
-      nav ul { gap: 0.5em; }
+      main {
+        padding: 0.5em;
+      }
+      nav ul {
+        gap: 0.5em;
+      }
     }
     @media (max-width: 480px) {
-      h1 { font-size: 1.5rem; }
-      h2 { font-size: 1.25rem; }
-      nav ul { flex-direction: column; gap: 0; }
-      nav a { padding: 0.5em 0; }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.25rem;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+      }
+      nav a {
+        padding: 0.5em 0;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Back -->
-  <button class="back-button" onclick="history.back()">← Back</button>
 
-  <header>
-    <h1>Nathan M. Johnson</h1>
-    <img src="images/me_and_my_dog.jpeg" alt="Nathan with his dog">
-    <p><strong>Born and raised in Vallejo, CA.</strong></p>
-    <p><strong>Retired Navy Veteran, embracing new adventures.</strong></p>
-  </header>
+<header>
+  <h1>Nathan M. Johnson</h1>
+  <img src="images/me_and_my_dog.jpeg" alt="Nathan with his dog">
+  <p><strong>Born and raised in Vallejo, CA.</strong></p>
+  <p><strong>Retired Navy Veteran, embracing new adventures.</strong></p>
+</header>
 
-  <nav>
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#extracurricular">Extracurricular</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Nathan—a proud Navy veteran, financial professional, and aspiring attorney. With 12 years of service in the Navy and a deep passion for helping others, I’ve dedicated my career to empowering individuals and families through financial literacy and strategic planning. I’ve already helped over 100 families build financial security, and my mission is to impact 10 million more by 2035.
+      Currently, I’m a Senior at San Francisco State University, preparing for law school while continuing my work in wealth accumulation, retirement planning, college funds, life insurance, asset protection, and tax engineering.
+    </p>
+    <figure>
+      <img src="images/professional_photo.jpg" alt="Professional Photo of Nathan M. Johnson">
+      <figcaption>Nathan M. Johnson - Financial Professional</figcaption>
+    </figure>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#extracurricular">Extracurricular</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li>Bachelor's in Criminal Justice, Minor in Computer Science – SFSU, Expected 2026</li>
     </ul>
-  </nav>
+  </section>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I’m Nathan—a proud Navy veteran, financial professional, and aspiring attorney. With 12 years of service in the Navy and a deep passion for helping others, I’ve dedicated my career to empowering individuals and families through financial literacy and strategic planning. I’ve already helped over 100 families build financial security, and my mission is to impact 10 million more by 2035.
-      Currently, I’m a Senior at San Francisco State University, preparing for law school while continuing my work in wealth accumulation, retirement planning, college funds, life insurance, asset protection, and tax engineering.</p>
-      <figure>
-        <img src="images/professional_photo.jpg" alt="Professional Photo of Nathan M. Johnson">
-        <figcaption>Nathan M. Johnson - Financial Professional</figcaption>
-      </figure>
-    </section>
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <ul>
+      <li>Security Operations Center Analyst</li>
+      <li>Financial Professional</li>
+      <li>Administrative Supervisor</li>
+    </ul>
+  </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li>Bachelor's in Criminal Justice, Minor in Computer Science – SFSU, Expected 2026</li>
-      </ul>
-    </section>
-
-    <section id="experience">
-      <h2>Professional Experience</h2>
-      <ul>
-        <li>Security Operations Center Analyst</li>
-        <li>Financial Professional</li>
-        <li>Administrative Supervisor</li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>iOS Style Calculator</h3>
-          <p>A sleek, interactive calculator built with JavaScript, styled like iOS.</p>
-          <a href="calculator.html" target="_blank" class="button-link">View Calculator</a>
-        </div>
-        <div class="project-card">
-          <h3>Veteran Support Network</h3>
-          <p>A platform dedicated to helping veterans smoothly transition into civilian careers.</p>
-        </div>
-        <div class="project-card">
-          <h3>Financial Literacy Workshops</h3>
-          <p>Interactive sessions covering budgeting, investments, and long-term financial planning.</p>
-        </div>
-        <div class="project-card">
-          <h3>Budget Planner</h3>
-          <p>Track your income and expenses with my custom Budget Planner app—built in vanilla JavaScript, HTML &amp; CSS.</p>
-          <a href="main.html" target="_blank" class="button-link">View Budget Planner</a>
-        </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>iOS Style Calculator</h3>
+        <p>A sleek, interactive calculator built with JavaScript, styled like iOS.</p>
+        <a href="calculator.html" target="_blank" class="button-link">View Calculator</a>
       </div>
-    </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Financial Planning &amp; Wealth Management</li>
-        <li>Strategic Communication &amp; Public Speaking</li>
-        <li>Cybersecurity &amp; Risk Assessment</li>
-        <li>Leadership, Mentorship &amp; Team Development</li>
-      </ul>
-    </section>
+      <div class="project-card">
+        <h3>Veteran Support Network</h3>
+        <p>A platform dedicated to helping veterans smoothly transition into civilian careers.</p>
+      </div>
 
-    <section id="extracurricular">
-      <h2>Extracurricular Activities</h2>
-      <p>I enjoy staying active, continuous learning, and mentoring others.</p>
-    </section>
+      <div class="project-card">
+        <h3>Financial Literacy Workshops</h3>
+        <p>Interactive sessions covering budgeting, investments, and long-term financial planning.</p>
+      </div>
 
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit" class="button-link">Send</button>
-      </form>
-    </section>
+      <div class="project-card">
+        <h3>Budget Planner</h3>
+        <p>Track your income and expenses with my custom Budget Planner app—built in vanilla JavaScript, HTML &amp; CSS.</p>
+        <a href="main.html" target="_blank" class="button-link">View Budget Planner</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="video">
-      <h2>Lawhub Promotional Video</h2>
-      <iframe src="https://www.youtube.com/embed/tsfuHiAQh4E" title="Lawhub Promotional Video"></iframe>
-    </section>
-  </main>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Financial Planning &amp; Wealth Management</li>
+      <li>Strategic Communication &amp; Public Speaking</li>
+      <li>Cybersecurity &amp; Risk Assessment</li>
+      <li>Leadership, Mentorship &amp; Team Development</li>
+    </ul>
+  </section>
 
-  <footer>
-    <p>&copy; 2024 Nathan M. Johnson</p>
-  </footer>
+  <section id="extracurricular">
+    <h2>Extracurricular Activities</h2>
+    <p>I enjoy staying active, continuous learning, and mentoring others.</p>
+  </section>
 
-  <!-- Floating Tools -->
-  <div class="floating-tools">
-    <a href="https://www.linkedin.com/in/nathan-johnson-38730965" target="_blank">
-      <img src="images/LinkedIn.png" alt="LinkedIn Profile" width="40">
-    </a>
-    <button id="theme-switcher" class="theme-toggle" aria-label="Switch Theme">Switch Theme</button>
-  </div>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-  <script>
-    const themes = [
-      "styles/styles.css",
-      "styles/ai-1.css",
-      "styles/ai-2.css",
-      "styles/hybrid.css"
-    ];
-    function switchStyle() {
-      const link = document.getElementById("theme-style");
-      const current = link.getAttribute("href").split("/").pop();
-      const idx = themes.map(t => t.split("/\
-")).indexOf(current);
-      const next = (idx + 1) % themes.length;
-      link.setAttribute("href", themes[next]);
-      localStorage.setItem("theme", themes[next]);
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <input type="submit" value="Send">
+    </form>
+  </section>
+
+  <section id="video">
+    <h2>Lawhub Promotional Video</h2>
+    <iframe
+      src="https://www.youtube.com/embed/tsfuHiAQh4E"
+      allowfullscreen
+      title="Lawhub Promotional Video">
+    </iframe>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 Nathan M. Johnson</p>
+</footer>
+
+<!-- Floating LinkedIn and Theme Switcher -->
+<div class="floating-tools">
+  <a href="https://www.linkedin.com/in/nathan-johnson-38730965" target="_blank">
+    <img src="images/LinkedIn.png" alt="LinkedIn Profile" width="40">
+  </a>
+  <button type="button" id="theme-switcher" class="theme-toggle" aria-label="Switch Theme">
+    Switch Theme
+  </button>
+</div>
+
+<script>
+  const themes = [
+    "styles/styles.css",
+    "styles/ai-1.css",
+    "styles/ai-2.css",
+    "styles/hybrid.css"
+  ];
+
+  function switchStyle() {
+    const link = document.getElementById("theme-style");
+    const current = link.getAttribute("href").split("/").pop();
+    const idx = themes.map(t => t.split("/").pop()).indexOf(current);
+    const next = (idx + 1) % themes.length;
+    link.setAttribute("href", themes[next]);
+    localStorage.setItem("theme", themes[next]);
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.getElementById("theme-style").setAttribute("href", savedTheme);
     }
-    window.addEventListener("DOMContentLoaded", () => {
-      const saved = localStorage.getItem("theme");
-      if (saved) document.getElementById("theme-style").setAttribute("href", saved);
-      document.getElementById("theme-switcher").addEventListener("click", switchStyle);
-    });
-  </script>
+    document.getElementById("theme-switcher").addEventListener("click", switchStyle);
+  });
+</script>
 </body>
 </html>
+
